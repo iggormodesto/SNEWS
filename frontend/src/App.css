@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  font-family: 'Raleway', sans-serif;
 }
 
 .App-logo {
@@ -8,14 +8,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #F2F2F2;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.App-header .Logo-snew {
+  width: 187px;
 }
 
 .App-link {

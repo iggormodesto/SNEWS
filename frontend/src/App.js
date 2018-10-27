@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import snews from './imagens/logo.png';
 import './App.css';
 import {
   Collapse,
@@ -21,32 +21,28 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edite <code>src/App.js</code> e salve para recarregar.
-          </p>
           <a
             className="App-link"
-            href="https://reactjs.org"
+            href="http://snews.tv/pt/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Leia Mais
+            <img src={snews} className="Logo-snew" alt="logo" />
           </a>
         </header>
+
         <section className="main container">
           <div className="row">
-            <div className="col-ms">
-              Coluna 1 - Teste
+            <div className="col-sm">
+              <h1>AGENDA</h1>
             </div>
-            <div className="col-ms">
-              Coluna 2
-            </div>
-            <div className="col-ms">
-              Coluna 3
-            </div>
+            <div className="col-sm">Teste 2</div>
           </div>
         </section>
+
+        <footer>
+          Footer
+        </footer>
       </div>
     );
   }
