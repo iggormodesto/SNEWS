@@ -36,7 +36,9 @@ class App extends Component {
             <div className="col-sm">
               <h1>AGENDA</h1>
             </div>
-            <div className="col-sm">Teste 2</div>
+            <div className="col-sm">
+              <a href="#" className="button">Novo Contato</a>
+            </div>
           </div>
         </section>
 
