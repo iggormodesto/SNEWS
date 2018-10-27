@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+  Button
+} from 'reactstrap';
 
 class App extends Component {
   render() {
@@ -9,7 +23,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Edite <code>src/App.js</code> e salve para recarregar.
           </p>
           <a
             className="App-link"
@@ -17,9 +31,22 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Leia Mais
           </a>
         </header>
+        <section className="main container">
+          <div className="row">
+            <div className="col-ms">
+              Coluna 1 - Teste
+            </div>
+            <div className="col-ms">
+              Coluna 2
+            </div>
+            <div className="col-ms">
+              Coluna 3
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
