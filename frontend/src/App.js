@@ -54,18 +54,15 @@ class App extends Component {
               <h1>AGENDA</h1>
             </div>
             <div className="col-sm">
-              <a
-                className="button adicionar"
-                href="#"
-                target="_blank"
-              >
-                <img src={adicionar} alt="Adicionar" /> Novo Contato
+              <a className="button adicionar" href="#" target="_blank">
+                Novo Contato
               </a>
             </div>
           </div>
 
           <ul className="contatos">
             <li className="row">
+
               <div className="col">
                 <p>01 - Homem</p>
                 <h3>Nome do Cara</h3>
@@ -73,23 +70,16 @@ class App extends Component {
                 <p>LeonardoPereiraMartins@dayrep.com</p>
                 <p>(95) 3760-3464</p>
               </div>
-              <div className="col acoes">
-                <a
-                  className="adicionar"
-                  href="#"
-                  target="_blank"
-                >
+
+              <div className="col-3 acoes">
+                <a className="adicionar" href="#">
                   <img src={editar} alt="Editar" />Editar
                 </a>
-
-                <a
-                  className="adicionar"
-                  href="#"
-                  target="_blank"
-                >
-                  <img src={excluir} alt="Editar" />Excluir
+                <a className="adicionar" href="#">
+                  <img src={excluir} alt="Excluir" />Excluir
                 </a>
               </div>
+
             </li>
           </ul>
 
