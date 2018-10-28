@@ -34,3 +34,18 @@ Como uma API Rest tradicional, as seguintes opções estão disponíveis:
 | PUT    | http://localhost:8080/contacts/{id} | Atualiza os dados completos de um contato |
 | PATCH  | http://localhost:8080/contacts/{id} | Permite atualizar os dados parcialmente   |
 | DELETE | http://localhost:8080/contacts/{id} | Apaga um contato cadastrado               |
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+  Button
+} from 'reactstrap';

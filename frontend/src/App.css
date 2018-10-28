@@ -41,6 +41,20 @@
   margin-right: 8px;
 }
 
+.App .contatos {
+  padding: 20px 0 0 0;
+  border-top: #949696 solid 1px;
+}
+
+.App .contatos li {
+  border-bottom: #949696 solid 1px;
+  padding-bottom: 20px;
+}
+
+.App .contatos li p {
+  margin-bottom: 4px;
+}
+
 .App-header .Logo-snew {
   width: 187px;
 }

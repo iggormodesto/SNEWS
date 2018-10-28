@@ -5,22 +5,36 @@ import editar from './imagens/edit.svg';
 import excluir from './imagens/delete.svg';
 import './App.css';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
   Container,
   Row,
   Col,
-  Jumbotron,
-  Button
 } from 'reactstrap';
 
 class App extends Component {
+    Contatos = {
+      _embedded: {
+        contacts: []
+      },
+      page: {}
+    }
+
+  get() {
+    fetch('http://localhost:8080/contacts')
+    .then(async (response) => {
+     return response.json();
+    })
+    .then (async (r) =>  {
+      this.Contatos._embedded = r._embedded;
+      this.Contatos.page = r.page;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+
   render() {
+    this.get ();
+    {console.log(this.Contatos)}
     return (
       <div className="App">
         <header className="App-header">
@@ -54,9 +68,10 @@ class App extends Component {
             <li className="row">
               <div className="col">
                 <p>01 - Homem</p>
-                <h3>Leonardo Pereira Martins</h3>
+                <h3>Nome do Cara</h3>
                 <p>18/06/1994</p>
                 <p>LeonardoPereiraMartins@dayrep.com</p>
+                <p>(95) 3760-3464</p>
               </div>
               <div className="col acoes">
                 <a
