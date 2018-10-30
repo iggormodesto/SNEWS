@@ -7,7 +7,12 @@ import {
   Modal, 
   ModalHeader, 
   ModalBody, 
-  ModalFooter 
+  ModalFooter,
+  Form,
+  FormGroup, 
+  Label, 
+  Input, 
+  FormText
 } from 'reactstrap';
 import './App.css';
 
@@ -90,11 +95,21 @@ class App extends Component {
               <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                 <ModalHeader toggle={this.toggle}>Novo Contato</ModalHeader>
                 <ModalBody>
-                  Formulário.
+                  <Form>
+                    <FormGroup>
+                      <Input type="text" name="name" id="name" placeholder="Nome" />
+                      <Input type="select" name="select" id="genero">
+                        <option>Homem</option>
+                        <option>Mulher</option>
+                        <option>Não-binário</option>
+                      </Input>
+                      <Input type="date" name="datetime" id="aniversario" placeholder="Aniversário" />
+                      <Input type="email" name="email" id="email" placeholder="E-mail" />
+                      <Input type="text" name="telefone" id="telefone" placeholder="Telefone" />
+                      <Button color="primary" onClick={this.toggle}>Salvar</Button>{' '}
+                    </FormGroup>
+                  </Form>
                 </ModalBody>
-                <ModalFooter>
-                  <Button color="primary" onClick={this.toggle}>Salvar</Button>{' '}
-                </ModalFooter>
               </Modal>
             </div>
           </div>
