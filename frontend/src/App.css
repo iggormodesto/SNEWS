@@ -9,6 +9,7 @@
 
 .App a:hover {
   text-decoration: none;
+  color: #CA202B;
 }
 
 .App-logo {
@@ -144,6 +145,26 @@
   color: #fff;
   background-color: #CA202B;
   border-color: #CA202B;
+}
+
+footer {
+  text-align: center;
+  background: #949696;
+  color: #fff;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  padding: 20px;
+}
+
+footer a {
+  color: #fff !important;
+  font-weight: 600;
 }
 
 
