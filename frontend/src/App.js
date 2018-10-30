@@ -38,7 +38,7 @@ class App extends Component {
         }
       ],
       modal: false,
-      _embedded: []
+      contact: []
     };
     this.toggle = this.toggle.bind(this);
   }
@@ -52,8 +52,8 @@ class App extends Component {
   componentDidMount() {
     axios.get(`http://localhost:8080/contacts`)
       .then(res => {
-        const _embedded = res.data;
-        this.setState({_embedded});
+        const contact = res.data._embedded.contacts;
+        this.setState({contact});
       })
   }
 
@@ -101,15 +101,15 @@ class App extends Component {
           </div>
 
           <ul className="contatos">
-            {this.state.items.map(item => (
+          {this.state.contact !== undefined && this.state.contact.map(contact => (
               <li className="row">
 
                 <div className="col">
-                  <p>{item.id} - {item.gender}</p>
-                  <h3>{item.name}</h3>
-                  <p>{item.birthday}</p>
-                  <p>{item.email}</p>
-                  <p>{item.phone}</p>
+                  <p>{contact.id} - {contact.gender}</p>
+                  <h3>{contact.name}</h3>
+                  <p>{contact.birthday}</p>
+                  <p>{contact.email}</p>
+                  <p>{contact.phone}</p>
                 </div>
 
                 <div className="col-3 acoes">
@@ -122,15 +122,6 @@ class App extends Component {
                 </div>
 
               </li>
-            ))}
-          </ul>
-          
-          {/* TESTE USANDO AXIS PARA RECUPERAR INFORMAÇÃO BACKEND */}
-          <ul>
-            {console.log(this.state._embedded.contacts)}
-            {this.state._embedded.contacts !== undefined &&
-              this.state._embedded.contacts.map(contact => (
-              <li>{contact}</li>
             ))}
           </ul>
         </section>
