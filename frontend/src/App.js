@@ -20,21 +20,45 @@ class App extends Component {
 
   get() {
     fetch('http://localhost:8080/contacts')
-    .then(async (response) => {
-     return response.json();
-    })
-    .then (async (r) =>  {
-      this.Contatos._embedded = r._embedded;
-      this.Contatos.page = r.page;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+    //.then(async (response) => {
+    // return response.json();
+    //})
+    //.then (async (r) =>  {
+    //  this.Contatos._embedded = r._embedded;
+    //  this.Contatos.page = r.page;
+    //})
+    //.catch((error) => {
+    //  console.error(error);
+    //});
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+    	items: [
+        { 
+          id: "01",
+          nome: "Leonardo Pereira", 
+          genero: "Homem", 
+          nascimento: "18/06/1994", 
+          email: "leonardopereira@daurep.com",
+          telefone: "95 3760-3464" 
+        },
+        { 
+          id: "02",
+          nome: "Igor Modesto", 
+          genero: "Homem", 
+          nascimento: "18/06/1994", 
+          email: "iggormoreira@hotmail.com.br",
+          telefone: "61 98100-7179" 
+        }
+      ]
+    }
   }
 
   render() {
     this.get ();
-    {console.log(this.Contatos)}
+    //{console.log(this.Contatos)}
     return (
       <div className="App">
         <header className="App-header">
@@ -54,33 +78,35 @@ class App extends Component {
               <h1>AGENDA</h1>
             </div>
             <div className="col-sm">
-              <a className="button adicionar" href="#" target="_blank">
+              <a className="button adicionar" href="#">
                 Novo Contato
               </a>
             </div>
           </div>
 
           <ul className="contatos">
-            <li className="row">
+            {this.state.items.map(item => (
+              <li className="row">
 
-              <div className="col">
-                <p>01 - Homem</p>
-                <h3>Nome do Cara</h3>
-                <p>18/06/1994</p>
-                <p>LeonardoPereiraMartins@dayrep.com</p>
-                <p>(95) 3760-3464</p>
-              </div>
+                <div className="col">
+                  <p>{item.id} - {item.genero}</p>
+                  <h3>{item.nome}</h3>
+                  <p>{item.nascimento}</p>
+                  <p>{item.email}</p>
+                  <p>{item.telefone}</p>
+                </div>
 
-              <div className="col-3 acoes">
-                <a className="adicionar" href="#">
-                  <img src={editar} alt="Editar" />Editar
-                </a>
-                <a className="adicionar" href="#">
-                  <img src={excluir} alt="Excluir" />Excluir
-                </a>
-              </div>
+                <div className="col-3 acoes">
+                  <a className="adicionar" href="#">
+                    <img src={editar} alt="Editar" />Editar
+                  </a>
+                  <a className="adicionar" href="#">
+                    <img src={excluir} alt="Excluir" />Excluir
+                  </a>
+                </div>
 
-            </li>
+              </li>
+            ))}
           </ul>
 
         </section>
