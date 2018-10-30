@@ -125,13 +125,13 @@ class App extends Component {
             ))}
           </ul>
 
-          {/*<ul>
-            {this.state._embedded.map(_embedded => (
-              <li>{_embedded.contacts.name}</li>
+          <ul>
+            {console.log(this.state._embedded)}
+            {this.state._embedded.contacts !== undefined &&
+            this.state._embedded.contacts.map(contacts => (
+              <li>{contacts.name}</li>
             ))}
           </ul>
-          */}
-
         </section>
 
         <footer>
