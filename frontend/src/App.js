@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import snews from './imagens/logo.png';
-import adicionar from './imagens/add.svg';
 import editar from './imagens/edit.svg';
 import excluir from './imagens/delete.svg';
-import './App.css';
-import {
-  Container,
-  Row,
-  Col,
+import { 
+  Button, 
+  Modal, 
+  ModalHeader, 
+  ModalBody, 
+  ModalFooter 
 } from 'reactstrap';
+import './App.css';
 
 class App extends Component {
     Contatos = {
@@ -52,8 +53,16 @@ class App extends Component {
           email: "iggormoreira@hotmail.com.br",
           telefone: "61 98100-7179" 
         }
-      ]
-    }
+      ],
+      modal: false
+    };
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   render() {
@@ -66,7 +75,6 @@ class App extends Component {
             className="App-link"
             href="http://snews.tv/pt/"
             target="_blank"
-            rel="noopener noreferrer"
           >
             <img src={snews} className="Logo-snew" alt="logo" />
           </a>
@@ -78,9 +86,16 @@ class App extends Component {
               <h1>AGENDA</h1>
             </div>
             <div className="col-sm">
-              <a className="button adicionar" href="#">
-                Novo Contato
-              </a>
+              <Button className="button adicionar" onClick={this.toggle}>Novo Contato</Button>
+              <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <ModalHeader toggle={this.toggle}>Novo Contato</ModalHeader>
+                <ModalBody>
+                  Formulário.
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="primary" onClick={this.toggle}>Salvar</Button>{' '}
+                </ModalFooter>
+              </Modal>
             </div>
           </div>
 
