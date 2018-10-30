@@ -127,12 +127,11 @@ class App extends Component {
           
           {/* TESTE USANDO AXIS PARA RECUPERAR INFORMAÇÃO BACKEND */}
           <ul>
-            {console.log(this.state._embedded)}
+            {console.log(this.state._embedded.contacts)}
             {this.state._embedded.contacts !== undefined &&
               this.state._embedded.contacts.map(contact => (
-              <li>{contact.name}</li>
+              <li>{contact}</li>
             ))}
-            {this.state._embedded.contacts}
           </ul>
         </section>
 
