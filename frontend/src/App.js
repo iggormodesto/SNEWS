@@ -113,10 +113,10 @@ class App extends Component {
                 </div>
 
                 <div className="col-3 acoes">
-                  <a className="adicionar" href="#">
+                  <a className="editar" href="#">
                     <img src={editar} alt="Editar" />Editar
                   </a>
-                  <a className="adicionar" href="#">
+                  <a className="excluir" href="#">
                     <img src={excluir} alt="Excluir" />Excluir
                   </a>
                 </div>
